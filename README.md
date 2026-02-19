@@ -1,5 +1,5 @@
 # Spotify-Download-Project
-This project is my attempt to localize my existing +10,000 song spotify music library
+This project is my attempt to localize my existing +10,000 song spotify music library for offline listening.
 
 # spotDL Python Guide & Helper
 
