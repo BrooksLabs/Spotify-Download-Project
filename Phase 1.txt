@@ -1,0 +1,22 @@
+Phase 1: Setting up the Tools
+
+1. Install Python (The Foundation)
+
+    Windows: Go to Python.org and download the latest installer. Crucial step: When you run the installer, look at the very bottom of the first window and check the box that says "Add Python to PATH" before clicking install. If you miss this, nothing else will work.
+
+    Mac: Modern Macs usually have Python pre-installed. If not, download the macOS installer from Python.org.
+
+2. Open your Terminal / Command Prompt
+
+    Windows: Click the Start button, type cmd, and hit Enter.
+
+    Mac: Press Cmd + Space, type Terminal, and hit Enter.
+
+3. Install spotDL
+In the black box that opens, type this exact command and press Enter:
+pip install spotdl
+(Note: If you are on a Mac and it gives you an error, type pip3 install spotdl instead).
+
+4. Install FFmpeg (The Audio Engine)
+spotDL needs a background tool called FFmpeg to physically convert the video streams into MP3 files. Fortunately, spotDL can download this for you automatically. Run this command:
+spotdl --download-ffmpeg
