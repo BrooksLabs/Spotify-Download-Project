@@ -12,11 +12,17 @@ Phase 1: Setting up the Tools
 
     Mac: Press Cmd + Space, type Terminal, and hit Enter.
 
-3. Install spotDL
+3. Install pkg_resources
+Type the following command into the terminal and press Enter:
+pip install setuptools
+Wait a few seconds for it to download and install. This puts the missing pkg_resources tool onto your computer.
+
+4. Install spotDL
 In the black box that opens, type this exact command and press Enter:
 pip install spotdl
 (Note: If you are on a Mac and it gives you an error, type pip3 install spotdl instead).
 
-4. Install FFmpeg (The Audio Engine)
+5. Install FFmpeg (The Audio Engine)
 spotDL needs a background tool called FFmpeg to physically convert the video streams into MP3 files. Fortunately, spotDL can download this for you automatically. Run this command:
 spotdl --download-ffmpeg
+
