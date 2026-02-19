@@ -22,7 +22,7 @@ In the black box that opens, type this exact command and press Enter:
 pip install spotdl
 (Note: If you are on a Mac and it gives you an error, type pip3 install spotdl instead).
 
-5. Install FFmpeg (The Audio Engine)
+5. Install FFmpeg
 spotDL needs a background tool called FFmpeg to physically convert the video streams into MP3 files. Windows has a built-in package manager that can download and install FFmpeg for you in about 10 seconds. Type this exact command into the black window and press Enter:
 winget install ffmpeg
 (Note: If it asks you to agree to any terms and conditions, just type Y and press Enter).
