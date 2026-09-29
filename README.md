@@ -1,5 +1,5 @@
 # Local-Music-Download-Project
-This project is my attempt to localize my existing +10,000 song music library for offline listening. 
+This project is a utility to localize your music library for offline listening. 
 
 # YouTube & iTunes Audio Downloader Guide
 
