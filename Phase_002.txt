@@ -1,30 +1,18 @@
 Phase 2: Downloading Your Library
 
-5. Create a Dedicated Music Folder
-You don't want 10,000 files dumping onto your desktop.
+1. Set Your Music Folder
+    The script will ask you to enter a folder name (defaulting to "Music Library") and provide numbered suggestions for where to save it (like your Music or Downloads folder). Type the number of your preferred location and hit Enter. The script will automatically create the folder and direct all downloads there.
 
-    Create a new folder named "Spotify Library" exactly where you want the music saved.
+2. Search for a Track
+    In the script's main menu, type `1` and press Enter. 
+    Instead of dealing with URLs, the script will ask you to Enter the 'Artist - Song Title'. Type the artist and song name you want (e.g., "Kendrick Lamar - squabble up") and press Enter.
 
-    In your terminal, type cd  (make sure to include the space after 'cd').
+3. Automated Magic
+    The script will now completely take over. It will:
+    - Silently query the iTunes API to grab the exact Artist, Title, Album, Genre, Year, Track/Disc numbers, Explicit tags, and 1000x1000 cover art.
+    - Search YouTube for the best audio source and download it.
+    - Force FFmpeg to convert the stream to a strict 320kbps MP3.
+    - Embed all the metadata directly into the file.
 
-    Drag and drop that new "Spotify Library" folder directly into the terminal window. The terminal will automatically type out the folder path for you. Hit Enter. Your terminal is now "inside" that folder.
-
-6. The Download Command
-Go to Spotify, find the playlist you want to start with and click the three dots, select "Share", and click "Copy link to playlist".
-
-In your terminal, type spotdl  followed by the link you just copied, but add --user-auth to the very end. It should look like this:
-spotdl https://open.spotify.com/playlist/YOUR_PLAYLIST_LINK_HEREs --user-auth
-
-7. Authorize in Your Browser
-
-    The terminal will pause, and a Spotify login page will automatically pop up in your web browser.
-
-    Log in with your normal Spotify account and click Agree to grant spotDL permission to view your playlists.
-
-    The browser will say "Success" or redirect you to a blank page. You can close that browser tab.
-
-8. Let it Run
-Press Enter. spotDL will now fetch the metadata, find the best audio matches, and save perfectly tagged MP3 files right into your folder.
-
-
-    Pro-Tip for large batches: If your internet cuts out, or if you want to stop the process so you can close your laptop, simply click into the terminal and press Ctrl + C. When you are ready to resume, run the exact same command from Step 6. spotDL generates a tracking file, so it will instantly skip everything it already downloaded and pick up right where it left off.
+4. Smart Resume
+    Pro-Tip for large batches: If you search for a song you've already downloaded, the script detects the existing file in your folder. It will instantly skip the download phase and strictly update the ID3 metadata tags, saving you time and bandwidth.
