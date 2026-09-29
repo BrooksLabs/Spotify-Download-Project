@@ -134,7 +134,7 @@ def guide_download(playlist_url: Optional[str] = None, output_folder: Optional[P
     if not output_folder:
         output_folder = Path.cwd()
 
-    cmd = ["spotdl", playlist_url, "--output", str(output_folder), "--preload", "--user-auth"]
+    cmd = ["spotdl", playlist_url, "--output", str(output_folder), "--user-auth"]
 
     print("\nWe will run this command (you can copy-paste it too):")
     print("  " + " ".join(cmd))
