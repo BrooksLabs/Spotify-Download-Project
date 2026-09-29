@@ -27,6 +27,7 @@ import os
 import subprocess
 import shutil
 from pathlib import Path
+from typing import List, Optional
 
 
 def print_header(text: str) -> None:
@@ -35,7 +36,7 @@ def print_header(text: str) -> None:
     print("=" * 70 + "\n")
 
 
-def run_command(cmd: list[str], check: bool = True, capture_output: bool = False) -> subprocess.CompletedProcess:
+def run_command(cmd: List[str], check: bool = True, capture_output: bool = False) -> subprocess.CompletedProcess:
     """Helper to run shell commands with nice feedback"""
     print(f"Running: {' '.join(cmd)}")
     try:
@@ -68,6 +69,7 @@ def install_spotdl() -> None:
     pip_cmd = ["pip3"] if sys.platform.startswith("darwin") else ["pip"]
     try:
         run_command([*pip_cmd, "install", "--upgrade", "pip"], check=False)
+        run_command([*pip_cmd, "install", "setuptools"])
         run_command([*pip_cmd, "install", "spotdl"])
         print("\nspotDL installed successfully!")
     except Exception as e:
@@ -122,7 +124,7 @@ def create_music_folder() -> Path:
     return target
 
 
-def guide_download(playlist_url: str | None = None, output_folder: Path | None = None) -> None:
+def guide_download(playlist_url: Optional[str] = None, output_folder: Optional[Path] = None) -> None:
     print_header("Downloading your Spotify content")
     if not playlist_url:
         print("1. Open Spotify → find playlist/album/track")
@@ -132,8 +134,7 @@ def guide_download(playlist_url: str | None = None, output_folder: Path | None =
     if not output_folder:
         output_folder = Path.cwd()
 
-    cmd = ["spotdl", playlist_url, "--output", str(output_folder), "--preload"]
-    # --preload tries to speed up by pre-resolving matches
+    cmd = ["spotdl", playlist_url, "--output", str(output_folder), "--preload", "--user-auth"]
 
     print("\nWe will run this command (you can copy-paste it too):")
     print("  " + " ".join(cmd))
